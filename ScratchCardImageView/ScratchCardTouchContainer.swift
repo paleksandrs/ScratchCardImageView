@@ -1,5 +1,5 @@
 //
-//  ScratchCardImageView.swift
+//  ScratchCardTouchContainer.swift
 //  ScratchCardImageView
 //
 //  Created by Aleksandrs Proskurins on 09/12/2016.
@@ -8,48 +8,44 @@
 
 import UIKit
 
-
-class ScratchCardImageView: UIImageView {
+class ScratchCardTouchContainer: UIView {
 
     private var lastPoint: CGPoint?
     
     var lineType: CGLineCap = .square
     var lineWidth: CGFloat = 20.0
+    var scratchCardImageView: UIImageView?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        isUserInteractionEnabled = true
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    
-        guard  let touch = touches.first else {
+        
+        guard  let touch = touches.first, let imageView = scratchCardImageView  else {
             
             return
         }
- 
-        lastPoint = touch.location(in: self)
+        
+        lastPoint = touch.location(in: imageView)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        guard  let touch = touches.first, let point = lastPoint else {
+        guard  let touch = touches.first, let point = lastPoint, let imageView = scratchCardImageView  else {
             
             return
         }
         
-        let currentLocation = touch.location(in: self)
-        eraseBetween(fromPoint: point, currentPoint: currentLocation)
+        let currentLocation = touch.location(in: imageView)
+        
+        eraseBetween(fromPoint: point, currentPoint: currentLocation, imageView: imageView)
         
         lastPoint = currentLocation
     }
     
-    func eraseBetween(fromPoint: CGPoint, currentPoint: CGPoint) {
-    
-        UIGraphicsBeginImageContext(self.frame.size)
+    func eraseBetween(fromPoint: CGPoint, currentPoint: CGPoint, imageView: UIImageView) {
         
-        image?.draw(in: self.bounds)
+        UIGraphicsBeginImageContext(imageView.frame.size)
+        
+        imageView.image?.draw(in: imageView.bounds)
         
         let path = CGMutablePath()
         path.move(to: fromPoint)
@@ -63,8 +59,8 @@ class ScratchCardImageView: UIImageView {
         context.addPath(path)
         context.strokePath()
         
-        image = UIGraphicsGetImageFromCurrentImageContext()
-  
+        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+        
         UIGraphicsEndImageContext()
     }
 }

@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         
         scratchCard.image = UIImage(color: UIColor.gray, size: scratchCard.frame.size)
         scratchCard.lineType = .square
-        scratchCard.lineWidth = 10
+        scratchCard.lineWidth = 20
     }
 }
 

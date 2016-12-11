@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CfO-sm-Cqu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -48,13 +48,122 @@
                             <constraint firstItem="DhX-0b-O7l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZWb-kf-TEC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="i0B-bb-HUg"/>
                     <connections>
                         <outlet property="scratchCard" destination="gWE-We-nl0" id="vaY-Lf-tCk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1158" y="575"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tgz-YK-Yv1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CfO-sm-Cqu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="73t-Hc-QEo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="O9D-y4-fdb" kind="relationship" relationship="rootViewController" id="eK4-Vo-AJF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RMI-fl-kEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-338" y="120"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jHX-hU-SH2">
+            <objects>
+                <viewController id="O9D-y4-fdb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UVk-5r-Uxc"/>
+                        <viewControllerLayoutGuide type="bottom" id="wiP-LX-ftd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vvV-hN-2hJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCl-XJ-cqW">
+                                <rect key="frame" x="107" y="198" width="160" height="30"/>
+                                <state key="normal" title="ScratchCardImageView"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="sY0-7g-yCI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3GT-jU-9WE">
+                                <rect key="frame" x="68" y="124" width="238" height="30"/>
+                                <state key="normal" title="Using ScratchCardTouchContainer"/>
+                                <connections>
+                                    <segue destination="5ou-yY-zyt" kind="show" id="uOD-go-irq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3GT-jU-9WE" firstAttribute="centerX" secondItem="vvV-hN-2hJ" secondAttribute="centerX" id="AvM-sR-yex"/>
+                            <constraint firstItem="OCl-XJ-cqW" firstAttribute="centerX" secondItem="vvV-hN-2hJ" secondAttribute="centerX" id="OAM-B2-Cuq"/>
+                            <constraint firstItem="3GT-jU-9WE" firstAttribute="top" secondItem="UVk-5r-Uxc" secondAttribute="bottom" constant="60" id="vsm-ZQ-3Tg"/>
+                            <constraint firstItem="OCl-XJ-cqW" firstAttribute="top" secondItem="3GT-jU-9WE" secondAttribute="bottom" constant="44" id="xVI-fR-Qwp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QVa-Km-fWi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="soi-1S-pw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="350" y="103"/>
+        </scene>
+        <!--View Controller0-->
+        <scene sceneID="sD2-PV-QPO">
+            <objects>
+                <viewController id="5ou-yY-zyt" customClass="ViewController0" customModule="ScratchCardImageView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8RH-57-BOg"/>
+                        <viewControllerLayoutGuide type="bottom" id="kki-Xt-pc9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rtc-Dj-alu" customClass="ScratchCardTouchContainer" customModule="ScratchCardImageView" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 000$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68B-U1-OA9">
+                                <rect key="frame" x="61" y="267" width="253" height="132"/>
+                                <color key="backgroundColor" red="0.095059029759999997" green="0.69233065839999997" blue="0.99996274709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="132" id="9Zt-p3-jZj"/>
+                                    <constraint firstAttribute="width" constant="253" id="9uQ-p5-xmI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XQt-NF-GAK">
+                                <rect key="frame" x="67" y="271" width="240" height="124"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Vkh-w2-AfQ"/>
+                                    <constraint firstAttribute="height" constant="124" id="nXd-Bl-0zu"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="68B-U1-OA9" firstAttribute="centerY" secondItem="rtc-Dj-alu" secondAttribute="centerY" id="1MA-Lu-Hp2"/>
+                            <constraint firstItem="XQt-NF-GAK" firstAttribute="centerY" secondItem="rtc-Dj-alu" secondAttribute="centerY" id="DU8-3Y-tbk"/>
+                            <constraint firstItem="68B-U1-OA9" firstAttribute="centerX" secondItem="rtc-Dj-alu" secondAttribute="centerX" id="j4F-9I-Zkp"/>
+                            <constraint firstItem="XQt-NF-GAK" firstAttribute="centerX" secondItem="rtc-Dj-alu" secondAttribute="centerX" id="oUI-Tt-Aaf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="167-Ri-GBB"/>
+                    <connections>
+                        <outlet property="scratchCard" destination="XQt-NF-GAK" id="jBH-8t-FUC"/>
+                        <outlet property="scratchCardTouchContainer" destination="rtc-Dj-alu" id="1gT-0j-yRE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1lF-hA-hs7" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1198" y="-185"/>
         </scene>
     </scenes>
 </document>

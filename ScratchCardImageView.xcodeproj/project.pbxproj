@@ -14,6 +14,8 @@
 		FA56BC6A1DFAF9B600294C20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA56BC681DFAF9B600294C20 /* LaunchScreen.storyboard */; };
 		FA56BC721DFAFB3D00294C20 /* UIImage+SolidColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56BC711DFAFB3D00294C20 /* UIImage+SolidColor.swift */; };
 		FA56BC741DFAFB8F00294C20 /* ScratchCardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56BC731DFAFB8F00294C20 /* ScratchCardImageView.swift */; };
+		FA64C3381DFB260F000B4A30 /* ScratchCardTouchContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64C3371DFB260F000B4A30 /* ScratchCardTouchContainer.swift */; };
+		FA64C33B1DFB2735000B4A30 /* ViewController0.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64C33A1DFB2735000B4A30 /* ViewController0.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		FA56BC6B1DFAF9B600294C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA56BC711DFAFB3D00294C20 /* UIImage+SolidColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SolidColor.swift"; sourceTree = "<group>"; };
 		FA56BC731DFAFB8F00294C20 /* ScratchCardImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScratchCardImageView.swift; sourceTree = "<group>"; };
+		FA64C3371DFB260F000B4A30 /* ScratchCardTouchContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScratchCardTouchContainer.swift; sourceTree = "<group>"; };
+		FA64C33A1DFB2735000B4A30 /* ViewController0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController0.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +62,11 @@
 		FA56BC5E1DFAF9B600294C20 /* ScratchCardImageView */ = {
 			isa = PBXGroup;
 			children = (
+				FA64C3391DFB2617000B4A30 /* Helpers */,
 				FA56BC731DFAFB8F00294C20 /* ScratchCardImageView.swift */,
-				FA56BC711DFAFB3D00294C20 /* UIImage+SolidColor.swift */,
+				FA64C3371DFB260F000B4A30 /* ScratchCardTouchContainer.swift */,
 				FA56BC5F1DFAF9B600294C20 /* AppDelegate.swift */,
+				FA64C33A1DFB2735000B4A30 /* ViewController0.swift */,
 				FA56BC611DFAF9B600294C20 /* ViewController.swift */,
 				FA56BC631DFAF9B600294C20 /* Main.storyboard */,
 				FA56BC661DFAF9B600294C20 /* Assets.xcassets */,
@@ -68,6 +74,14 @@
 				FA56BC6B1DFAF9B600294C20 /* Info.plist */,
 			);
 			path = ScratchCardImageView;
+			sourceTree = "<group>";
+		};
+		FA64C3391DFB2617000B4A30 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FA56BC711DFAFB3D00294C20 /* UIImage+SolidColor.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +116,7 @@
 				TargetAttributes = {
 					FA56BC5B1DFAF9B600294C20 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 65H57KS853;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -143,7 +158,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA56BC621DFAF9B600294C20 /* ViewController.swift in Sources */,
+				FA64C3381DFB260F000B4A30 /* ScratchCardTouchContainer.swift in Sources */,
 				FA56BC741DFAFB8F00294C20 /* ScratchCardImageView.swift in Sources */,
+				FA64C33B1DFB2735000B4A30 /* ViewController0.swift in Sources */,
 				FA56BC601DFAF9B600294C20 /* AppDelegate.swift in Sources */,
 				FA56BC721DFAFB3D00294C20 /* UIImage+SolidColor.swift in Sources */,
 			);
@@ -266,7 +283,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 65H57KS853;
 				INFOPLIST_FILE = ScratchCardImageView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ScratchCardImageView;
@@ -279,7 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 65H57KS853;
 				INFOPLIST_FILE = ScratchCardImageView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ScratchCardImageView;
