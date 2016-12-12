@@ -19,6 +19,9 @@ scratchCardTouchContainer.lineWidth = 20
 
 A simple `UIImageView` subclass that allows your `UIImageView` become a scratchcard. Touch events will be tracked only inside the `UIImageView` bounds. In the storyboard or xib set custom class of your `UIImageView` that represents your scratchcard image to `ScratchCardImageView`
 
+
+For both classes you can set delegate to retrieve erase progress from 0 (not erased) to 1 (fully erased). 
+
 ## License
 
 `ScratchCardImageView` and `ScratchCardTouchContainer` is released under an [MIT License][mitLink]. See `LICENSE` for details.

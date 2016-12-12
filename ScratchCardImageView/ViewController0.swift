@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController0: UIViewController {
+class ViewController0: UIViewController, ScratchCardTouchContainerDelegate {
     
     @IBOutlet weak var scratchCard: UIImageView!
     @IBOutlet var scratchCardTouchContainer: ScratchCardTouchContainer!
@@ -22,5 +22,11 @@ class ViewController0: UIViewController {
         scratchCardTouchContainer.scratchCardImageView = scratchCard
         scratchCardTouchContainer.lineType = .square
         scratchCardTouchContainer.lineWidth = 20
+        scratchCardTouchContainer.delegate = self
+    }
+    
+    func scratchCardTouchContainerDidErase(eraseProgress: Float) {
+        
+        print(eraseProgress)
     }
 }

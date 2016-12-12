@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol ScratchCardImageViewDelegate: class {
+    
+    func scratchCardImageViewDidEraseProgress(eraseProgress: Float)
+}
+
 
 class ScratchCardImageView: UIImageView {
 
@@ -15,6 +20,7 @@ class ScratchCardImageView: UIImageView {
     
     var lineType: CGLineCap = .square
     var lineWidth: CGFloat = 20.0
+    weak var delegate: ScratchCardImageViewDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,15 +40,19 @@ class ScratchCardImageView: UIImageView {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        guard  let touch = touches.first, let point = lastPoint else {
+        guard  let touch = touches.first, let point = lastPoint, let img = image else {
             
             return
         }
         
         let currentLocation = touch.location(in: self)
         eraseBetween(fromPoint: point, currentPoint: currentLocation)
-        
         lastPoint = currentLocation
+        
+        if let _ = delegate {
+            let progress = alphaOnlyPersentage(img: img)
+            delegate?.scratchCardImageViewDidEraseProgress(eraseProgress: progress)
+        }
     }
     
     func eraseBetween(fromPoint: CGPoint, currentPoint: CGPoint) {
@@ -66,5 +76,45 @@ class ScratchCardImageView: UIImageView {
         image = UIGraphicsGetImageFromCurrentImageContext()
   
         UIGraphicsEndImageContext()
+    }
+
+    private func alphaOnlyPersentage(img: UIImage) -> Float {
+        
+        let width = Int(img.size.width)
+        let height = Int(img.size.height)
+        
+        let bitmapBytesPerRow = width
+        let bitmapByteCount = bitmapBytesPerRow * height
+
+        let pixelData = UnsafeMutablePointer<UInt8>.allocate(capacity: bitmapByteCount)
+
+        let colorSpace = CGColorSpaceCreateDeviceGray()
+        
+        let context = CGContext(data: pixelData,
+                                width: width,
+                                height: height,
+                                bitsPerComponent: 8,
+                                bytesPerRow: bitmapBytesPerRow,
+                                space: colorSpace,
+                                bitmapInfo: CGBitmapInfo(rawValue: CGImageAlphaInfo.alphaOnly.rawValue).rawValue)!
+        
+        let rect = CGRect(x: 0, y: 0, width: width, height: height)
+        context.clear(rect)
+        context.draw(img.cgImage!, in: rect)
+        
+        var alphaOnlyPixels = 0
+        
+        for x in 0...Int(width) {
+            for y in 0...Int(height) {
+                
+                if pixelData[y * width + x] == 0 {
+                   alphaOnlyPixels += 1
+                }
+            }
+        }
+   
+        free(pixelData)
+
+        return Float(alphaOnlyPixels) / Float(bitmapByteCount)
     }
 }

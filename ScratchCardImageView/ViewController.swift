@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ScratchCardImageViewDelegate {
     
     @IBOutlet weak var scratchCard: ScratchCardImageView!
 
@@ -18,6 +18,12 @@ class ViewController: UIViewController {
         scratchCard.image = UIImage(color: UIColor.gray, size: scratchCard.frame.size)
         scratchCard.lineType = .square
         scratchCard.lineWidth = 20
+        scratchCard.delegate = self
+    }
+    
+    func scratchCardImageViewDidEraseProgress(eraseProgress: Float) {
+        
+        print(eraseProgress)
     }
 }
 
